@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dibbajothy Sarker - Cybersecurity Specialist Portfolio">
+  <title>Dibbajothy Sarker</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Cursor effect -->
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+  
+  <!-- Loading screen -->
+  <div id="loading-screen">
+    <div class="terminal-container">
+      <div class="terminal-header">
+        <div class="terminal-button"></div>
+        <div class="terminal-button"></div>
+        <div class="terminal-button"></div>
+      </div>
+      <div class="terminal-body">
+        <div id="terminal-text"></div>
+        <div class="blinking-cursor">|</div>
+      </div>
+    </div>
+  </div>
+
+  <header>
+    <div class="container header-container">
+      <div class="brand">
+        <div class="glitch-wrapper">
+          <span class="name glitch" data-text="DIBBAJOTHY SARKER">Dibbajothy Sarker</span>
+        </div>
+        <span class="title">CSE Undergrade Student</span>
+      </div>
+
+      <div class="nav-toggle" id="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <nav id="nav-menu">
+        <a href="#about" data-scroll>About</a>
+        <a href="#achievements" data-scroll>Achievements</a>
+        <a href="#contact" data-scroll>Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="grid-layout">
+          <div class="hero-content">
+            <h1 class="animate-text">CTF Player & Cybersecurity Enthusiast</h1>
+            <p class="tagline">Specializing in <span class="highlight">Computer forensics</span>, <span class="highlight">binary exploitation</span>, and <span class="highlight">Reverse Engineering</span></p>
+            <div class="hero-buttons">
+              <a href="#contact" class="btn primary-btn" data-scroll>Get in touch</a>
+            </div>
+          </div>
+          <div class="hero-graphic">
+            <div class="code-window">
+              <div class="code-header">
+                <div class="code-dot"></div>
+                <div class="code-dot"></div>
+                <div class="code-dot"></div>
+                <div class="code-title">exploit.py</div>
+              </div>
+              <div class="code-body">
+                <pre><code id="code-animation"></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+<!-- About Section -->
+<section id="about" class="section-padding reveal">
+    <div class="container">
+        <div class="about-header">
+            <h2 class="section-title">About Me</h2>
+            <div class="green-dot"></div>
+        </div>
+
+        <div class="about-content-wide">
+            <p>
+                I've always been the "tech guy" who fixes, tinkers and learns fast. Exploits gives me pleasure . I want to pwn every problem I face in my life
+            </p>
+            <div class="green-circle"></div>
+        </div>
+    </div>
+</section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="section-padding reveal">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Achievements</h2>
+        </div>
+        
+        <div class="achievements-slider">
+          <div class="slider-track">
+            <div class="slide">
+              <figure class="achievement-card">
+                <div class="img-container">
+                  <img src="images/uap_cyber_siege.jpg" alt="2nd Runner-up – UAP Cyber Siege 2025" />
+                  <div class="overlay">
+                    <div class="view-details">View Details</div>
+                  </div>
+                </div>
+                <figcaption>
+                  <h3>2nd Runner-up</h3>
+                  <p>UAP Cyber Siege 2025</p>
+                </figcaption>
+              </figure>
+            </div>
+            <div class="slide">
+              <figure class="achievement-card">
+                <div class="img-container">
+                  <img src="images/ductf.png" alt="1st Runner-up – DU CTF 2024" />
+                  <div class="overlay">
+                    <div class="view-details">View Details</div>
+                  </div>
+                </div>
+                <figcaption>
+                  <h3>1st Runner-up</h3>
+                  <p>DU CTF 2024</p>
+                </figcaption>
+              </figure>
+            </div>
+            <div class="slide">
+              <figure class="achievement-card">
+                <div class="img-container">
+                  <img src="images/picoctf.png" alt="191st place – picoCTF 2025" />
+                  <div class="overlay">
+                    <div class="view-details">View Details</div>
+                  </div>
+                </div>
+                <figcaption>
+                  <h3>191st Place</h3>
+                  <p>picoCTF 2025</p>
+                </figcaption>
+              </figure>
+            </div>
+            <div class="slide">
+              <figure class="achievement-card">
+                <div class="img-container">
+                  <img src="images/cyberraid.png" alt="9th place – CyberRaid 2025" />
+                  <div class="overlay">
+                    <div class="view-details">View Details</div>
+                  </div>
+                </div>
+                <figcaption>
+                  <h3>9th Place</h3>
+                  <p>CyberRaid 2025</p>
+                </figcaption>
+              </figure>
+            </div>
+            <div class="slide">
+              <figure class="achievement-card">
+                <div class="img-container">
+                  <img src="images/knightctf.png" alt="50th place – KnightCTF 2025" />
+                  <div class="overlay">
+                    <div class="view-details">View Details</div>
+                  </div>
+                </div>
+                <figcaption>
+                  <h3>50th Place</h3>
+                  <p>KnightCTF 2025</p>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="slider-nav">
+            <button class="slider-btn prev"><i class="fas fa-chevron-left"></i></button>
+            <div class="slider-dots"></div>
+            <button class="slider-btn next"><i class="fas fa-chevron-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding bg-alt reveal">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Contact</h2>
+        </div>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <p>Interested in working together? Feel free to reach out through any of the platforms below.</p>
+                <div class="social-links">
+                    <a href="https://github.com/Dibbajothy" target="_blank" rel="noopener" class="social-btn">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/dibbajothy-sarker-3b73ab269/" target="_blank" rel="noopener"
+                        class="social-btn">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="mailto:contact@dibbajothy.com" class="social-btn">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email</span>
+                    </a>
+                    <a href="https://www.facebook.com/dibbajothy" target="_blank" rel="noopener" class="social-btn">
+                        <i class="fab fa-facebook"></i>
+                        <span>Facebook</span>
+                    </a>
+                </div>
+            </div>
+          
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <p class="copyright">&copy; 2025 Dibbajothy Sarker | Security Researcher</p>
+        <p class="last-updated">Last updated: <span id="last-updated">July 4, 2025</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal for achievement details -->
+  <div class="modal" id="achievement-modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <div class="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
