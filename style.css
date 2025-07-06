@@ -7,8 +7,8 @@
   --bg-secondary: #f8f8f8;
   --text-primary: #000000;
   --text-secondary: #333333;
-  --accent: #00ff00;
-  --accent-dark: #00cc00;
+  --accent: #00a6ff;
+  --accent-dark: #035c97;
   --border: rgba(0, 0, 0, 0.1);
   --shadow: rgba(0, 0, 0, 0.08);
   --shadow-strong: rgba(0, 0, 0, 0.15);
@@ -130,8 +130,9 @@ button {
 }
 
 .terminal-container {
-  width: 600px;
-  max-width: 80%;
+  width: 70%;
+  height: 70%;
+  /* max-width: 80%; */
   background: #000;
   border-radius: 8px;
   overflow: hidden;
@@ -188,9 +189,8 @@ header {
   left: 0;
   width: 100%;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgb(255, 255, 255);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
   height: var(--header-height);
   display: flex;
   align-items: center;
@@ -203,189 +203,33 @@ header.hidden {
 
 .header-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row; /* Ensure horizontal layout */
+  justify-content: flex-start; /* Start items from the left */
   align-items: center;
   width: 100%;
 }
 
-.brand {
-  display: flex;
-  flex-direction: column;
+header .header-container{
+  max-width: none;   /* ignore the 1200 px limit             */
+  width: 100%;       /* stretch across the whole viewport    */
+  margin: 0;         /* kill the `auto` side-margins         */
+  padding: 0 2rem;   /* OPTIONAL: 2 rem breathing room       */
 }
+
+.brand {
+  margin-right: auto; /* Pushes everything else to the right */
+  text-align: left;
+}
+
 
 .name {
   font-family: var(--font-heading);
   font-weight: 800;
   font-size: 1.3rem;
   letter-spacing: 1px;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
-/* Glitch effect */
-.glitch-wrapper {
-  position: relative;
-  overflow: hidden;
-}
-
-.glitch {
-  position: relative;
-  display: inline-block;
-}
-
-.glitch::before,
-.glitch::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  clip: rect(0, 0, 0, 0);
-}
-
-.glitch::before {
-  left: 2px;
-  text-shadow: -1px 0 var(--accent);
-  animation: glitch-anim-1 2s infinite linear alternate-reverse;
-}
-
-.glitch::after {
-  left: -2px;
-  text-shadow: 2px 0 var(--accent);
-  animation: glitch-anim-2 3s infinite linear alternate-reverse;
-}
-
-@keyframes glitch-anim-1 {
-  0% {
-    clip: rect(36px, 9999px, 9px, 0);
-  }
-  5% {
-    clip: rect(85px, 9999px, 78px, 0);
-  }
-  10% {
-    clip: rect(32px, 9999px, 53px, 0);
-  }
-  15% {
-    clip: rect(27px, 9999px, 92px, 0);
-  }
-  20% {
-    clip: rect(30px, 9999px, 78px, 0);
-  }
-  25% {
-    clip: rect(47px, 9999px, 31px, 0);
-  }
-  30% {
-    clip: rect(38px, 9999px, 82px, 0);
-  }
-  35% {
-    clip: rect(22px, 9999px, 67px, 0);
-  }
-  40% {
-    clip: rect(32px, 9999px, 41px, 0);
-  }
-  45% {
-    clip: rect(56px, 9999px, 2px, 0);
-  }
-  50% {
-    clip: rect(93px, 9999px, 92px, 0);
-  }
-  55% {
-    clip: rect(54px, 9999px, 85px, 0);
-  }
-  60% {
-    clip: rect(84px, 9999px, 34px, 0);
-  }
-  65% {
-    clip: rect(78px, 9999px, 81px, 0);
-  }
-  70% {
-    clip: rect(25px, 9999px, 84px, 0);
-  }
-  75% {
-    clip: rect(38px, 9999px, 92px, 0);
-  }
-  80% {
-    clip: rect(48px, 9999px, 35px, 0);
-  }
-  85% {
-    clip: rect(39px, 9999px, 83px, 0);
-  }
-  90% {
-    clip: rect(56px, 9999px, 26px, 0);
-  }
-  95% {
-    clip: rect(56px, 9999px, 23px, 0);
-  }
-  100% {
-    clip: rect(25px, 9999px, 90px, 0);
-  }
-}
-
-@keyframes glitch-anim-2 {
-  0% {
-    clip: rect(87px, 9999px, 59px, 0);
-  }
-  5% {
-    clip: rect(43px, 9999px, 84px, 0);
-  }
-  10% {
-    clip: rect(21px, 9999px, 25px, 0);
-  }
-  15% {
-    clip: rect(80px, 9999px, 62px, 0);
-  }
-  20% {
-    clip: rect(5px, 9999px, 90px, 0);
-  }
-  25% {
-    clip: rect(41px, 9999px, 91px, 0);
-  }
-  30% {
-    clip: rect(42px, 9999px, 73px, 0);
-  }
-  35% {
-    clip: rect(56px, 9999px, 29px, 0);
-  }
-  40% {
-    clip: rect(30px, 9999px, 82px, 0);
-  }
-  45% {
-    clip: rect(67px, 9999px, 74px, 0);
-  }
-  50% {
-    clip: rect(95px, 9999px, 45px, 0);
-  }
-  55% {
-    clip: rect(4px, 9999px, 87px, 0);
-  }
-  60% {
-    clip: rect(44px, 9999px, 43px, 0);
-  }
-  65% {
-    clip: rect(45px, 9999px, 64px, 0);
-  }
-  70% {
-    clip: rect(87px, 9999px, 32px, 0);
-  }
-  75% {
-    clip: rect(39px, 9999px, 15px, 0);
-  }
-  80% {
-    clip: rect(73px, 9999px, 57px, 0);
-  }
-  85% {
-    clip: rect(80px, 9999px, 69px, 0);
-  }
-  90% {
-    clip: rect(41px, 9999px, 52px, 0);
-  }
-  95% {
-    clip: rect(65px, 9999px, 86px, 0);
-  }
-  100% {
-    clip: rect(30px, 9999px, 5px, 0);
-  }
-}
 
 .title {
   font-size: 0.8rem;
@@ -467,15 +311,15 @@ nav a:hover::after {
   grid-column: 1 / 7;
 }
 
-.hero-graphic {
-  grid-column: 7 / 13;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+
+.hero-graphic{               
+  align-self: flex-start;      
+  margin-top: 20rem;
 }
 
 .hero h1 {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 800;
   margin-bottom: 1.5rem;
   letter-spacing: -1px;
@@ -491,6 +335,11 @@ nav a:hover::after {
   font-size: 1.2rem;
   margin-bottom: 2rem;
   color: var(--text-secondary);
+}
+
+.code {
+  color: #0055c4;
+  word-break: break-word;
 }
 
 .highlight {
@@ -553,7 +402,8 @@ nav a:hover::after {
 
 /* Code window animation */
 .code-window {
-  width: 100%;
+  width: 100%;               /* original width: 100 % */                       /* :contentReference[oaicite:1]{index=1} */
+  max-height: 300px;            /* keeps it from stretching too wide     */
   background: #1e1e1e;
   border-radius: 8px;
   overflow: hidden;
@@ -678,6 +528,31 @@ nav a:hover::after {
   }
 }
 
+/* ━━━ Future.jpg tweaks ━━━━━━━━━━━━━━━━━━━━━ */
+.profile-pic{
+  width: 260px;              /*   adjust if you want it bigger/smaller */
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 2rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,.18);
+}
+
+.hero-content{               /* make the left column a bit narrower   */
+  grid-column: 1 / 6;
+}
+
+.hero-graphic{               /* code-window gets a little more room   */
+  grid-column: 6 / 13;
+}
+
+/* remove the small green ring previously floating above the title */
+.animate-text::before,
+.animate-text::after{
+  content:none;
+}
+
+
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    Sections & Content
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
@@ -761,21 +636,13 @@ nav a:hover::after {
   display: none; /* remove default underline */
 }
 
-.green-dot {
-  position: absolute;
-  left: 0;
-  bottom: -10px;
-  width: 8px;
-  height: 8px;
-  background-color: #00ff00;
-  border-radius: 50%;
-}
+
 
 /* -------------- Content -------------- */
 .about-content-wide {
   position: relative;
   width: 100%;
-  max-width: 60ch; /* comfortable reading width */
+  max-width: 90ch; /* comfortable reading width */
   margin: 0 auto;  /* center the paragraph */
 }
 
@@ -787,15 +654,9 @@ nav a:hover::after {
 }
 
 /* Decorative hollow circle */
-.green-circle {
-  position: absolute;
-  width: 60px;
-  height: 60px;
-  border: 1px solid #00ff00;
-  border-radius: 50%;
-  top: 50%;
-  right: 5%;
-  transform: translateY(-50%);
+.desig-p{
+  margin-top: 50em;
+
 }
 
 /* -------------- Media Queries -------------- */

