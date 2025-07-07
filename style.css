@@ -654,9 +654,8 @@ nav a:hover::after {
 }
 
 /* Decorative hollow circle */
-.desig-p{
-  margin-top: 50em;
-
+.desig{
+  font-size: 70%;
 }
 
 /* -------------- Media Queries -------------- */
